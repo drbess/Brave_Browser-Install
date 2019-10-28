@@ -1,9 +1,8 @@
 #!/bin/bash
 
-##################
-# @Author: Devsol
-# updated 2019-10-26
-# Installing the Brave browser
+###############################
+# Updated 2019-10-27          #
+# Brave browser Install       #
 ###############################
 
 
