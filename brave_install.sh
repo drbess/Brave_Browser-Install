@@ -1,8 +1,8 @@
 #!/bin/bash
 
-###############################
-# Updated 2019-10-27          #
-# Brave browser Install       #
+
+# New Update 2020-12-26          
+# Brave Browser Install       
 ###############################
 
 
@@ -32,17 +32,18 @@ check_exit_status() {
 greeting() {
 
         echo
-        echo "Hello, $USER. Let's update this system. "
-        echo
+        echo "What's good $USER! I will now install. "
+        sleep 5
 }
-install_brave() {
-        echo "Let's add the repo first"
-        dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/;
-        check_exit_status
-        rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc;
-        echo "Ok, installing the Brave"
-        echo "###################################################################################"
-        dnf install brave-browser -y;
+install-configure_brave() {
+        echo "Configuring the repo"
+        dnf install dnf-plugins-core
+	sleep 5
+	dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+	sleep 5
+	rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+	sleep 5
+	dnf install brave-browser -y;
         check_exit_status
 
 }
@@ -58,6 +59,6 @@ bounce() {
         exit
 }
 greeting
-install_brave
+install-configure_brave
 cleanuptime
 bounce
